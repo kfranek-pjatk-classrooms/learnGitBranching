@@ -14,7 +14,8 @@ exports.level = {
     'ru_RU': 'Знакомство с Git Commit ',
     'uk': 'Знайомство з комітами в Git',
     'vi': 'Giới thiệu về Git Commit',
-    'sl_SI': "Uvod v Git Commit"
+    'sl_SI': "Uvod v Git Commit",
+    'pl_PL': 'Wprowadzenie do polecenia "git commit"'
   },
   "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C3\",\"id\":\"master\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git commit;git commit",
@@ -34,7 +35,8 @@ exports.level = {
     "ru_RU": "Попробуй дважды выполнить команду 'git commit' ;)",
     "uk": "Спробуй двічі виконати команду 'git commit' ;)",
     'vi': "Đơn giản là cứ gõ 'git commit' 2 lần",
-    'sl_SI': "Preprosto dvakrat vpiši 'git commit' in zaključi!"
+    'sl_SI': "Preprosto dvakrat vpiši 'git commit' in zaključi!",
+    "pl_PL": 'Wpisz dwa razy "git commit", aby ukończyć to zadanie!',
   },
   "disabledMap": {
     "git revert": true
@@ -675,6 +677,47 @@ exports.level = {
           "options": {
             "markdowns": [
               "Čas je, da poizkusiš sam! Ko se to okno zapre, naredi dva commita, da dokončaš to stopnjo."
+            ]
+          }
+        }
+      ]
+    }, "pl_PL": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Git Commits",
+              "Commit (pol. 'obiekt zmian') zapisuje w repozytorium Gita migawkę wszystkich plików śledzonych w Twoim katalogu. To tak, jakby ktoś zrobił jedno wielkie kopiuj-wklej, ale o wiele lepiej!",
+              "",
+              "Ponieważ Git chce, aby commity były jak najlżejsze, nie kopiuje na ślepo wszystkiego, co znajdzie w Twoim katalogu. Zamiast tego, gdy tylko może, upakowuje commity jako zbiory różnic (ang. delta) pomiędzy kolejnymi wersjami repozytorium.",
+              "",
+              "Git odnotowuje również historię utworzenia poszczególnych commitów. Więszkość commitów posiada swojego przodka -- na prezentacji oznaczyliśmy to poprzez strzałki oraz umieszczenie commitów jeden pod drugim. Historia zmian to doskonałe narzędzie dla każdego kto zajmuje się projektem!" ,
+              "",
+              "Podsumowując - możesz myśleć o commitach jak o 'migawkach' projektu. Commity są bardzo lekkie, a przeskakiwanie pomiędzy nimi -- bardzo szybkie.",
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Zobacz jak to wygląda w praktyce. Po prawej stronie pokazano wizualizację niewielkiego repozytorium Gita. Na razie są w nim tylko dwa commity -- początkowy commit `C0` i kolejny, `C1`, który zawiera pewne ważne zmiany.",
+              "",
+              "Kliknij przycisk poniżej, żeby utworzyć nowy commit",
+            ],
+            "afterMarkdowns": [
+              "Doskonale! Dokonaliśmy właśnie zmian w repozytorium i zapisaliśmy je jako kolejny commit. Zauważ, że jego rodzicem jest commit `C1`, który z kolei wskazuje na własnego rodzica.",
+            ],
+            "command": "git commit",
+            "beforeCommand": ""
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Teraz spróbuj sam -- zamknij to okno i wykonaj kolejne dwa commity aby zaliczyć poziom."
             ]
           }
         }

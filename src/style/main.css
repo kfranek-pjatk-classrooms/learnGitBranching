@@ -247,6 +247,9 @@ div.gitDemonstrationView > div.visHolder,
 .visBackgroundColor {
   background: #5cbcfc;
   background-color: #5cbcfc;
+  background-image: url("../assets/hanami.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 body.hgMode div.gitDemonstrationView > div.visHolder,
